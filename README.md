@@ -1,2 +1,2 @@
-# class-06-lab
+# coookie-stand
 Lab for class 6!
