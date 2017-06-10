@@ -142,7 +142,7 @@ footer {
 }
 
 #locations {
-  font-family: 'Quattrocento', serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   font-size: 18px;
   text-align: center;
@@ -150,14 +150,14 @@ footer {
   padding: 1%;
 }
 h3 {
-  font-family: 'Quattrocento', serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   font-size: 18px;
   color: #FFFFFF;
   padding: 1%;
 }
 p{
-  font-family: 'Quattrocento', serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: lighter;
   font-size: 14px;
   color: #FFFFFF;
