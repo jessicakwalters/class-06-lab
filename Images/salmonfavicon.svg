@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="171px" height="28px" viewBox="0 0 171 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-46.000000, -31.000000)">
+            <g id="Group-4" transform="translate(42.000000, 24.000000)">
+                <g id="Group-3" transform="translate(21.524835, 19.870337) rotate(52.000000) translate(-21.524835, -19.870337) translate(11.579360, 0.325186)">
+                    <g id="Group-2" transform="translate(3.635519, 0.000000)">
+                        <g id="Group" transform="translate(0.145421, 0.000000)">
+                            <polygon id="Triangle" stroke-opacity="0.97155231" stroke="#7395AE" fill-opacity="0.97155231" fill="#7395AE" points="5.96225168 2.87100767e-14 5.96225168 10.3762068 0.0718343576 10.3762068"></polygon>
+                            <polygon id="Triangle" stroke="#557A95" fill="#557A95" points="6.03408604 0 11.9245034 10.3762068 6.03408604 10.3762068"></polygon>
+                        </g>
+                        <g id="Group" transform="translate(6.215922, 22.242325) scale(1, -1) translate(-6.215922, -22.242325) translate(0.000000, 9.838672)">
+                            <polygon id="Triangle" fill-opacity="0.97155231" fill="#7395AE" points="6.16353735 0.0879339557 6.16353735 24.2697718 0.116337062 24.2697718"></polygon>
+                            <polygon id="Triangle" fill="#557A95" points="6.10767245 0.0879339557 12.1222757 24.2697718 6.10767245 24.2697718"></polygon>
+                        </g>
+                    </g>
+                    <polygon id="Triangle-2" fill="#333333" transform="translate(12.866575, 34.075069) scale(1, -1) rotate(-37.000000) translate(-12.866575, -34.075069) " points="10.5246357 31.3748715 16.7138854 35.5621389 9.01926547 36.7752662"></polygon>
+                    <polygon id="Triangle-2" fill="#333333" transform="translate(6.613485, 34.075069) scale(-1, -1) rotate(-36.000000) translate(-6.613485, -34.075069) " points="4.27154563 31.3748715 10.4607953 35.5621389 2.76617543 36.7752662"></polygon>
+                    <polygon id="Triangle-2" stroke="#333333" fill="#333333" transform="translate(17.686981, 18.040192) scale(-1, 1) rotate(-83.000000) translate(-17.686981, -18.040192) " points="14.0762003 16.754206 23.7946532 19.3261774 11.5793083 19.3261774"></polygon>
+                    <polygon id="Triangle-2" stroke="#333333" fill="#333333" transform="translate(1.799761, 18.040192) rotate(-83.000000) translate(-1.799761, -18.040192) " points="-1.81101909 16.754206 7.90743381 19.3261774 -4.3079111 19.3261774"></polygon>
+                </g>
+                <text id="Pat’s-Salmon-Cookies" font-family="WalterTurncoat, Walter Turncoat" font-size="14" font-weight="normal" fill="#333333">
+                    <tspan x="36" y="23">Pat’s Salmon Cookies</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
