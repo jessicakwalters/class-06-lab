@@ -15,15 +15,15 @@ function Store(minHourlyCustomers, maxHourlyCustomers, avgCookiesPerSale, openHo
   this.customersPerHour = function () { return Math.round(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1)) + this.minHourlyCustomers;};
 }
 //create objects
-var firstAndPike = new Store(23, 65, 6.3, 6, 20, 'firstAndPike');
-var seaTacAirport = new Store(3, 24, 1.2, 6, 20, 'seaTacAirport');
-var seattleCenter = new Store(11, 38, 3.7, 6, 20, 'seattleCenter');
-var capitolHill = new Store(20, 38, 2.3, 6, 20, 'capitolHill');
-var alki = new Store(2, 16, 4.6, 6, 20, 'alki');
+var firstAndPike = new Store(23, 65, 6.3, 6, 20, '1st and Pike');
+var seaTacAirport = new Store(3, 24, 1.2, 6, 20, 'SeaTac Airport');
+var seattleCenter = new Store(11, 38, 3.7, 6, 20, 'Seattle Center');
+var capitolHill = new Store(20, 38, 2.3, 6, 20, 'Capitol Hill');
+var alki = new Store(2, 16, 4.6, 6, 20, 'Alki');
 
 //stores array
 var stores = [firstAndPike, seaTacAirport, seattleCenter, capitolHill, alki];
-
+var totalHourlyCookies = ['Total:'];
 //function to generate store data
 function cookiesPerStore(array){
 //loop through stores array
@@ -34,7 +34,7 @@ function cookiesPerStore(array){
 // total cookies per hour
     currentStore.calcCookiesPerHour = function() {
       console.log('Hours: ' + currentStore.openHour + ' to ' + currentStore.closeHour);
-      for (var k = currentStore.openHour; k < currentStore.closeHour; k++) {
+      for (var k = currentStore.openHour; k < currentStore.closeHour + 1; k++) {
     //make sure to round amount becuase you can't bake/sell partial cookies
         currentStore.Hours.push(k + ':00');
         currentStore.cookiesPerHour = Math.round(currentStore.avgCookiesPerSale * currentStore.customersPerHour());
@@ -63,21 +63,7 @@ function cookiesPerStore(array){
     currentStore.Hours.push('Total');
 
     // create function to write table header to page
-    var createTableHeader = function() {
-      var newTHead = document.createElement('thead');
-      var newRow = document.createElement('tr');
-      var positionTable = document.getElementById('table');
-      positionTable.appendChild(newTHead);
-      newTHead.appendChild(newRow);
-      for (var j = 0; j < currentStore.Hours.length; j++) {
-        var newTh = document.createElement('th');
-        newRow.appendChild(newTh);
-        newTh.textContent = currentStore.Hours[j];
-      };
-    };
 
-    // call function and write header to page
-    createTableHeader();
     //Create table body
     var createTableBody = function() {
       var newTBody = document.createElement('tbody');
@@ -96,9 +82,52 @@ function cookiesPerStore(array){
     createTableBody();
   }
 };
-
+//END
 //call all stores
 cookiesPerStore(stores);
+
+var universalStoreHours = ['Hours:','6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm', 'Total'];
+
+var newTHead = document.createElement('thead');
+var newRow = document.createElement('tr');
+var positionTable = document.getElementById('table');
+
+var createTableHeader = function() {
+  positionTable.appendChild(newTHead);
+  newTHead.appendChild(newRow);
+  for (var j = 0; j < universalStoreHours.length; j++) {
+    var newTh = document.createElement('th');
+    newRow.appendChild(newTh);
+    newTh.textContent = universalStoreHours[j];
+  };
+};
+// call function and write header to page
+createTableHeader();
+
+var createTableFooter = function(array) {
+  for (var l = 1; l <= 16; l++){
+    var hourlyTotal = 0;
+    for (var i = 0; i < array.length; i++){
+    //set current store
+      var currentStore = array[i];
+      hourlyTotal = hourlyTotal + currentStore.cookiesPerHourArray[l];
+    };
+    totalHourlyCookies.push(hourlyTotal);
+  }
+  var newTFoot = document.createElement('tfoot');
+  var newRow = document.createElement('tr');
+  var positionTable = document.getElementById('table');
+  positionTable.appendChild(newTFoot);
+  newTFoot.appendChild(newRow);
+  for (var j = 0; j < totalHourlyCookies.length; j++) {
+    var newTh = document.createElement('th');
+    newRow.appendChild(newTh);
+    newTh.textContent = totalHourlyCookies[j];
+  };
+};
+
+createTableFooter(stores);
+
 /* OLD CODE
     //create new element
       var newLi = document.createElement('li');
