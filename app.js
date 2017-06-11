@@ -62,8 +62,6 @@ function cookiesPerStore(array){
     console.log('Cookies Per Hour Array: ' + currentStore.cookiesPerHourArray);
     currentStore.Hours.push('Total');
 
-    // create function to write table header to page
-
     //Create table body
     var createTableBody = function() {
       var newTBody = document.createElement('tbody');
@@ -127,58 +125,3 @@ var createTableFooter = function(array) {
 };
 
 createTableFooter(stores);
-
-/* OLD CODE
-    //create new element
-      var newLi = document.createElement('li');
-      var liText = document.createTextNode(currentStore.cookiesDataArray[j]);
-    //append to parent element
-      newLi.appendChild(liText);
-    //set position
-      var positionLi = document.getElementById(currentStore.storeId);
-      positionLi.appendChild(newLi);
-*/
-//write to table to create table header
-/*
-//step 1 - create element
-var newTable = document.createElement('table');
-var newThead = document.createElement('thead');
-var newRow = document.createElement('tr');
-var newThHours = document.createElement('th');
-var newTh = document.createElement('th');
-
-//step 2 - append to parent
-var positionTable = document.getElementById(currentStore.storeId);
-positionTable.appendChild(newTable);
-newTable.appendChild(newThead);
-newThead.appendChild(newRow);
-newRow.appendChild(newTHours);
-newThHours.textContent('Hours:');
-newRow.appendChild(newTh);
-newTh.textContent = currentStore.cookiesPerHourArray[j];
-//step 3 - set position in DOM
-*/
-
-//Sample Code
-/*
-function makeRow(item){
-  //Step 1 - create element
-  var newRowEl = document.createElement('tr');
-
-  //Step 2 - Configure/Mutate the ROW element
-  var itemDataEl = document.createElement('td');
-  itemDataEl.textContent = item.name;
-  newRowEl.appendChild(itemDataEl);
-
-  var priceDataEl = document.createElement('td');
-  priceDataEl.textContent = item.price;
-  newRowEl.appendChild(priceDataEl);
-
-  var colorEl = document.createElement('td');
-  colorEl.textContent = item.color;
-  newRowEl.appendChild(colorEl);
-
-  //Step 3 - Append element to the DOM
-  tableBodyEl.appendChild(newRowEl);
-}
-*/
