@@ -94,3 +94,8 @@ tr:nth-child(even) {
 	font-weight: bolder;
 	white-space: nowrap;
 }
+
+#newLocation {
+	margin-left: 5%;
+	margin-top: 5%;
+}
