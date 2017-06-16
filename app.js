@@ -84,7 +84,7 @@ var createTableFooter = function(array) {
 
 //calculate table footer data
 var tableFooterData = function(array) {
-  for (var l = 1; l <= 16; l++){
+  for (var l = 1; l < universalStoreHours.length; l++){
     var hourlyTotal = 0;
     for (var i = 0; i < array.length; i++){
     //set current store
@@ -112,10 +112,10 @@ var newTBody = document.createElement('tbody');
 
 //Create an array for each store that stores total cookies produced each hour
 var calculateTotalCookies = function(array) {
-  for (var i = 0; i < stores.length; i++){
+  for (var i = 0; i < array.length; i++){
 
     //set current store
-    var currentStore = stores[i];
+    var currentStore = array[i];
     console.log(currentStore.storeId);
 
   // calculate total cookies per hour
@@ -165,8 +165,14 @@ function handleSubmit(event){
   var newStores = [newStore];
   calculateTotalCookies(newStores);
   newStore.createTableTbRow();
-
+  document.getElementById('table').deleteRow(-1);
+  totalHourlyCookies = ['Total:'];
+  console.log(stores);
+  tableFooterData(stores);
+  console.log(totalHourlyCookies);
+  createTableFooter(stores);
 };
+
 calculateTotalCookies(stores);
 createTableHeader(universalStoreHours);
 createTableBody(stores);
