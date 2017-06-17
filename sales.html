@@ -7,45 +7,80 @@
     <title></title>
   </head>
   <body>
-    <h1>Total Sales</h1>
+    <header>
+      <ul class="nav-bar">
+        <li class="nav-bar-logo"><img src="Images/PatsLogo.png" </li>
+        <li class="nav-list-item"><a class="nav-item-link" href="index.html">Home</a></li>
+        <li class="nav-list-item"><a class="nav-item-link" href="#">Shop Online</a></li>
+        <li class="nav-list-item"><a class="nav-item-link" href="#locations">Locations</a></li>
+      </ul>
+    </header>
+    <form id="newLocation">
+         <fieldset>
+           <legend>NEW STORE LOCATION</legend>
+
+           <div>
+             <label for="newStoreName">New Store Name:</label>
+             <input id="storeName-input" type="text" name="newStoreName" required>
+           </div>
+
+           <div>
+             <label for="newOpenHour">Time New Store Will Open:</label>
+             <input type="number" min="1" step="1" name="newOpenHour" value="" placeholder="Enter 6 for 6:00am" required>
+           </div>
+
+           <div>
+             <label for="newCloseHour">Time New Store Will Close:</label>
+              <input type="number" min="1" step="1" name="newCloseHour" placeholder="Enter 20 for 8:00pm"value="" required>
+           </div>
+
+           <div>
+             <label for="newMinHourlyCustomers">Minimum Number of Customers Per Hour:</label>
+             <input id="input-minHourlyCustomers" type="number"  min="1" step="1" name="newMinHourlyCustomers" value="" required>
+           </div>
+
+           <div>
+             <label for="newMaxHourlyCustomers">Maximum Number of Customers Per Hour:</label>
+              <input id="input-maxHourlyCustomers" type="number"  min="1" step="1" name="newMaxHourlyCustomers" value="" required>
+           </div>
+           <div>
+             <label for="newAvgCookiesPerSale">Average Number of Cookies Per Sale:</label>
+             <input id="input-avgCookiesPerSale" type="number"  min="1" step="1" value="" name="newAvgCookiesPerSale" required>
+           </div>
+           <input id="submit-button" type="submit" value="ADD NEW LOCATION">
+         </fieldset>
+       </form>
+    <h1>TOTAL SALES</h1>
     <table id="table">
 
     </table>
-    <form id="newLocation">
-         <fieldset>
-           <legend>New Store Location</legend>
+    <footer>
+      <h2 id="locations">Locations</h2>
+      <div class="location">
+        <h3>1st and Pike</h3>
+        <p>Hours: 6:00am - 8:00pm</p>
+      </div>
+      <div class="location">
+        <h3>SeaTac Airport</h3>
+        <p>Hours: 6:00am - 8:00pm</p>
+      </div>
+      <div class="location">
+        <h3>Seattle Center</h3>
+        <p>Hours: 6:00am - 8:00pm</p>
+      </div>
+      <div class="location">
+        <h3>Capitol Hill</h3>
+        <p>Hours: 6:00am - 8:00pm</p>
+      </div>
+      <div class="location">
+        <h3>Alki</h3>
+        <p>Hours: 6:00am - 8:00pm</p>
+      </div>
+      <div class="contact">
+        <h3>hello@bestsalmoncookies.com</h3>
+      </div>
 
-           <div>
-             <label for="storeName">New Store Name:</label>
-             <input id="storeName-input" type="text" name="storeName" required>
-           </div>
-
-           <div>
-             <label for="openHour">Time New Store Will Open:</label>
-             <input type="number" min="1" step="1" name="openHour" value="" required>
-           </div>
-
-           <div>
-             <label for="closeHour">Time New Store Will Close:</label>
-              <input type="number" min="1" step="1" name="closeHour" value="" required>
-           </div>
-
-           <div>
-             <label for="minHourlyCustomers">Minimum Number of Customers Per Hour:</label>
-             <input id="input-minHourlyCustomers" type="number"  min="1" step="1" name="minHourlyCustomers" value="" required>
-           </div>
-
-           <div>
-             <label for="maxHourlyCustomers">Maximum Number of Customers Per Hour:</label>
-              <input id="input-maxHourlyCustomers" type="number"  min="1" step="1" name="maxHourlyCustomers" value="" required>
-           </div>
-           <div>
-             <label for="avgCookiesPerSale">Average Number of Cookies Per Sale:</label>
-             <input id="input-avgCookiesPerSale" type="number"  min="1" step="1" value="" name="avgCookiesPerSale" required>
-           </div>
-           <input type="submit" value="Add New Location">
-         </fieldset>
-       </form>
+    </footer>
   <script src="app.js" type="text/javascript"></script>
   </body>
 
