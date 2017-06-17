@@ -141,15 +141,15 @@ formEl.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event){
   event.preventDefault();
+//rename variables so they don't have the same name as others
+  var newStoreName = event.target.newStoreName.value;
+  var newOpenHour = parseInt(event.target.newOpenHour.value);
+  var newCloseHour = parseInt(event.target.newCloseHour.value);
+  var newAvgCookiesPerSale = parseInt(event.target.newAvgCookiesPerSale.value);
+  var newMinHourlyCustomers = parseInt(event.target.newMinHourlyCustomers.value);
+  var newMaxHourlyCustomers = parseInt(event.target.newMaxHourlyCustomers.value);
 
-  var storeName = event.target.storeName.value;
-  var openHour = parseInt(event.target.openHour.value);
-  var closeHour = parseInt(event.target.closeHour.value);
-  var avgCookiesPerSale = parseInt(event.target.avgCookiesPerSale.value);
-  var minHourlyCustomers = parseInt(event.target.minHourlyCustomers.value);
-  var maxHourlyCustomers = parseInt(event.target.maxHourlyCustomers.value);
-
-  var newStore = new Store(minHourlyCustomers, maxHourlyCustomers, avgCookiesPerSale, openHour, closeHour, storeName);
+  var newStore = new Store(newMinHourlyCustomers, newMaxHourlyCustomers, newAvgCookiesPerSale, newOpenHour, newCloseHour, newStoreName);
   //write new store data to page
   console.log(newStore);
   console.log(stores);
