@@ -57,16 +57,6 @@ Store.prototype.createTableTbRow = function() {
 };
 //create table footer
 var createTableFooter = function(array) {
-  //calculate cookies per hour across every location
-  // for (var l = 1; l <= 16; l++){
-  //   var hourlyTotal = 0;
-  //   for (var i = 0; i < stores.length; i++){
-  //   //set current store
-  //     var currentStore = stores[i];
-  //     hourlyTotal = hourlyTotal + currentStore.cookiesPerHourArray[l];
-  //   };
-  //   totalHourlyCookies.push(hourlyTotal);
-  // }
   //write to page logic
   var newTFoot = document.createElement('tfoot');
   var newTfRow = document.createElement('tr');
@@ -160,11 +150,13 @@ function handleSubmit(event){
   var maxHourlyCustomers = parseInt(event.target.maxHourlyCustomers.value);
 
   var newStore = new Store(minHourlyCustomers, maxHourlyCustomers, avgCookiesPerSale, openHour, closeHour, storeName);
+  //write new store data to page
   console.log(newStore);
   console.log(stores);
   var newStores = [newStore];
   calculateTotalCookies(newStores);
   newStore.createTableTbRow();
+  //recalculate hourly totals and write to page
   document.getElementById('table').deleteRow(-1);
   totalHourlyCookies = ['Total:'];
   console.log(stores);
