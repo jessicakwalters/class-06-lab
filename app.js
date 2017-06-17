@@ -56,17 +56,7 @@ Store.prototype.createTableTbRow = function() {
   };
 };
 //create table footer
-var createTableFooter = function(stores) {
-  //calculate cookies per hour across every location
-  for (var l = 1; l <= 16; l++){
-    var hourlyTotal = 0;
-    for (var i = 0; i < stores.length; i++){
-    //set current store
-      var currentStore = stores[i];
-      hourlyTotal = hourlyTotal + currentStore.cookiesPerHourArray[l];
-    };
-    totalHourlyCookies.push(hourlyTotal);
-  }
+var createTableFooter = function(array) {
   //write to page logic
   var newTFoot = document.createElement('tfoot');
   var newTfRow = document.createElement('tr');
@@ -80,6 +70,19 @@ var createTableFooter = function(stores) {
       newTfTh.id = 'firstItem';
     };
   };
+};
+
+//calculate table footer data
+var tableFooterData = function(array) {
+  for (var l = 1; l < universalStoreHours.length; l++){
+    var hourlyTotal = 0;
+    for (var i = 0; i < array.length; i++){
+    //set current store
+      var currentStore = array[i];
+      hourlyTotal = hourlyTotal + currentStore.cookiesPerHourArray[l];
+    };
+    totalHourlyCookies.push(hourlyTotal);
+  }
 };
 //create objects
 var firstAndPike = new Store(23, 65, 6.3, 6, 20, '1st and Pike');
@@ -99,10 +102,10 @@ var newTBody = document.createElement('tbody');
 
 //Create an array for each store that stores total cookies produced each hour
 var calculateTotalCookies = function(array) {
-  for (var i = 0; i < stores.length; i++){
+  for (var i = 0; i < array.length; i++){
 
     //set current store
-    var currentStore = stores[i];
+    var currentStore = array[i];
     console.log(currentStore.storeId);
 
   // calculate total cookies per hour
@@ -130,9 +133,47 @@ var calculateTotalCookies = function(array) {
   };
 };
 
+console.log(stores);
+//Form Element Handler
+var formEl = document.getElementById('newLocation');
+
+formEl.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event){
+  event.preventDefault();
+
+  var storeName = event.target.storeName.value;
+  var openHour = parseInt(event.target.openHour.value);
+  var closeHour = parseInt(event.target.closeHour.value);
+  var avgCookiesPerSale = parseInt(event.target.avgCookiesPerSale.value);
+  var minHourlyCustomers = parseInt(event.target.minHourlyCustomers.value);
+  var maxHourlyCustomers = parseInt(event.target.maxHourlyCustomers.value);
+
+  var newStore = new Store(minHourlyCustomers, maxHourlyCustomers, avgCookiesPerSale, openHour, closeHour, storeName);
+  //write new store data to page
+  console.log(newStore);
+  console.log(stores);
+  var newStores = [newStore];
+  calculateTotalCookies(newStores);
+  newStore.createTableTbRow();
+  //recalculate hourly totals and write to page
+  document.getElementById('table').deleteRow(-1);
+  totalHourlyCookies = ['Total:'];
+  console.log(stores);
+  tableFooterData(stores);
+  console.log(totalHourlyCookies);
+  createTableFooter(stores);
+};
+
 calculateTotalCookies(stores);
 createTableHeader(universalStoreHours);
 createTableBody(stores);
+tableFooterData(stores);
 createTableFooter(stores);
+// calculateTotalCookies(stores);
+// createTableHeader(universalStoreHours);
+// createTableBody(stores);
+// tableFooterData(stores);
+// createTableFooter(stores);
 
 //END
