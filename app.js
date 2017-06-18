@@ -141,7 +141,6 @@ formEl.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event){
   event.preventDefault();
-//rename variables so they don't have the same name as others
   var newStoreName = event.target.newStoreName.value;
   var newOpenHour = parseInt(event.target.newOpenHour.value);
   var newCloseHour = parseInt(event.target.newCloseHour.value);
@@ -170,10 +169,6 @@ createTableHeader(universalStoreHours);
 createTableBody(stores);
 tableFooterData(stores);
 createTableFooter(stores);
-// calculateTotalCookies(stores);
-// createTableHeader(universalStoreHours);
-// createTableBody(stores);
-// tableFooterData(stores);
-// createTableFooter(stores);
+
 
 //END

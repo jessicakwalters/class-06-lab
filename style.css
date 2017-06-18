@@ -103,6 +103,14 @@ header {
   padding-top: 7%;
 }
 
+.banner-button {
+	width: 10%;
+	float: left;
+	position: absolute;
+  margin-top: 25%;
+  left: 10%;
+
+}
 .banner-image {
  width: 100%;
  margin-right: 0;
@@ -131,7 +139,43 @@ header {
 
 .content-images1, .content-images2  {
   width: 100%;
+
 }
+
+.row1:hover .content-images1{
+	opacity: .3;
+}
+
+.row2:hover .content-images2 {
+	opacity: .3;
+}
+
+.middle {
+	position: relative;
+}
+.button-link{
+	font-family: 'Quicksand', sans-serif;
+	background-color: #1E1D21;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5% 12%;
+	position: absolute;
+	top: 45%;
+	left: 30%;
+	text-decoration: none;
+	opacity: 0;
+}
+.row1:hover .button-link{
+	opacity: 1;
+}
+
+.row2:hover .button-link {
+	opacity: 1;
+}
+
 footer {
   float: left;
   width: 100%;
